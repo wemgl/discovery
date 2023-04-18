@@ -12,7 +12,7 @@ use microbit::{
     hal::prelude::*,
 };
 
-const DURATION_MS: u32 = 30;
+const DURATION_MS: u32 = 25;
 
 #[entry]
 fn main() -> ! {
@@ -62,3 +62,28 @@ fn main() -> ! {
         // 6. Continue back up to the top of the loop
     }
 }
+
+// #[entry]
+// fn display_heart() -> ! {
+//     rtt_init_print!();
+//
+//     let board = Board::take().unwrap();
+//     let mut timer = Timer::new(board.TIMER0);
+//     let mut display = Display::new(board.display_pins);
+//     let led_grid = [
+//         [0, 1, 0, 1, 0],
+//         [1, 1, 1, 1, 1],
+//         [1, 1, 1, 1, 1],
+//         [0, 1, 1, 1, 0],
+//         [0, 0, 1, 0, 0],
+//     ];
+//
+//     loop {
+//         display.show(&mut timer, led_grid, DURATION_MS);
+//
+//         // 3. Clear the display and delay for 1000ms
+//         display.clear();
+//         timer.delay_ms(DURATION_MS);
+//     }
+// }
+
